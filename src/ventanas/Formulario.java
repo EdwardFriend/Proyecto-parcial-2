@@ -1,4 +1,4 @@
-package Pruebas;
+package ventanas;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import javax.swing.JButton;
@@ -10,7 +10,7 @@ import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class Dialog extends JDialog {
+public class Formulario extends JDialog {
 	
 	private final JPanel contentPanel = new JPanel();
 	private JTextField txtNombre;
@@ -28,10 +28,10 @@ public class Dialog extends JDialog {
 	private JButton btnGuardar;
 	private JButton btnCancelar;
      
-	public Dialog() {
+	public Formulario(EditarTabla win2) {
 	
 	setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-	setBounds(100, 100, 500, 400);
+	setBounds(775, 100, 500, 400);
 	getContentPane().setLayout(new BorderLayout());
 	contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 	getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -39,7 +39,7 @@ public class Dialog extends JDialog {
 	
 	JPanel panel = new JPanel();
 	contentPanel.add(panel);
-	setTitle("Empleados");
+	setTitle("Formulario");
 	JLabel lblNombre = new JLabel("Nombre:");
 	panel.add(lblNombre);
 	
@@ -96,6 +96,122 @@ public class Dialog extends JDialog {
 	
 	btnCancelar = new JButton("Cancelar");
 	buttonPane.add(btnCancelar);
+	}
+
+	public JTextField getTxtNombre() {
+		return txtNombre;
+	}
+
+	public void setTxtNombre(JTextField txtNombre) {
+		this.txtNombre = txtNombre;
+	}
+
+	public JPanel getPanel_1() {
+		return panel_1;
+	}
+
+	public void setPanel_1(JPanel panel_1) {
+		this.panel_1 = panel_1;
+	}
+
+	public JLabel getLblApellido() {
+		return lblApellido;
+	}
+
+	public void setLblApellido(JLabel lblApellido) {
+		this.lblApellido = lblApellido;
+	}
+
+	public JTextField getTxtApellido() {
+		return txtApellido;
+	}
+
+	public void setTxtApellido(JTextField txtApellido) {
+		this.txtApellido = txtApellido;
+	}
+
+	public JLabel getLblCedula() {
+		return lblCedula;
+	}
+
+	public void setLblCedula(JLabel lblCedula) {
+		this.lblCedula = lblCedula;
+	}
+
+	public JTextField getTxtCedula() {
+		return txtCedula;
+	}
+
+	public void setTxtCedula(JTextField txtCedula) {
+		this.txtCedula = txtCedula;
+	}
+
+	public JLabel getLblEdad() {
+		return lblEdad;
+	}
+
+	public void setLblEdad(JLabel lblEdad) {
+		this.lblEdad = lblEdad;
+	}
+
+	public JTextField getTxtEdad() {
+		return txtEdad;
+	}
+
+	public void setTxtEdad(JTextField txtEdad) {
+		this.txtEdad = txtEdad;
+	}
+
+	public JLabel getLblDireccion() {
+		return lblDireccion;
+	}
+
+	public void setLblDireccion(JLabel lblDireccion) {
+		this.lblDireccion = lblDireccion;
+	}
+
+	public JTextField getTxtDireccion() {
+		return txtDireccion;
+	}
+
+	public void setTxtDireccion(JTextField txtDireccion) {
+		this.txtDireccion = txtDireccion;
+	}
+
+	public JLabel getCargo() {
+		return cargo;
+	}
+
+	public void setCargo(JLabel cargo) {
+		this.cargo = cargo;
+	}
+
+	public JCheckBox getCheck1() {
+		return check1;
+	}
+
+	public void setCheck1(JCheckBox check1) {
+		this.check1 = check1;
+	}
+
+	public JButton getBtnGuardar() {
+		return btnGuardar;
+	}
+
+	public void setBtnGuardar(JButton btnGuardar) {
+		this.btnGuardar = btnGuardar;
+	}
+
+	public JButton getBtnCancelar() {
+		return btnCancelar;
+	}
+
+	public void setBtnCancelar(JButton btnCancelar) {
+		this.btnCancelar = btnCancelar;
+	}
+
+	public JPanel getContentPanel() {
+		return contentPanel;
 	}
 	
 }

@@ -1,4 +1,7 @@
 package clases;
+
+import java.util.ArrayList;
+
 /**
  * 
  * @author MARIO LUZARDO
@@ -7,6 +10,7 @@ package clases;
  */
 public class Directivo extends Empleado{
 	private String categoria;
+	private ArrayList<Directivo> instance;
 	public Directivo() {
 	
 	}
