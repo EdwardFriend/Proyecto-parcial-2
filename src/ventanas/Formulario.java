@@ -1,4 +1,5 @@
 package ventanas;
+import escuchadores.*;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import javax.swing.JButton;
@@ -6,6 +7,9 @@ import javax.swing.JCheckBox;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import escuchadores.AccionEditar;
+
 import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -92,9 +96,11 @@ public class Formulario extends JDialog {
 	getContentPane().add(buttonPane, BorderLayout.SOUTH);
 	
 	btnGuardar = new JButton("Guardar");
+	btnGuardar.addActionListener(new AccionFormulario(this));
 	buttonPane.add(btnGuardar);
 	
 	btnCancelar = new JButton("Cancelar");
+	btnCancelar.addActionListener(new AccionFormulario(this));
 	buttonPane.add(btnCancelar);
 	}
 

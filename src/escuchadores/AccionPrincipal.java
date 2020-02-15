@@ -15,9 +15,14 @@ public class AccionPrincipal implements ActionListener{
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource()==win1.getMntmEmpleado()) {
+		if(e.getSource()==win1.getEditarTabla()){
 			new EditarTabla(win1).setVisible(true);
-			return;
+		}
+		if(e.getSource()==win1.getMntmEmpleado()) {
+
+		}
+		if(e.getSource()==win1.getMntmCliente()) {
+			
 		}
 		if(e.getSource() == win1.getMntmSalir()){
 			win1.setVisible(false);

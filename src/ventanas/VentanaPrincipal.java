@@ -4,6 +4,8 @@ import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTable;
+import escuchadores.AccionPrincipal;
+
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
@@ -16,15 +18,16 @@ public class VentanaPrincipal extends JFrame {
 	private JMenuBar menuBar;
 	private JMenu mnArchivo;
 	private JMenuItem mntmEmpleado;
+	private JMenuItem editarTabla;
 	private JMenuItem mntmCliente;
 	private JMenuItem mntmSalir;
 
-	public VentanaPrincipal() {
+	public VentanaPrincipal(String nombreEmpresa) {
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(400, 100, 450, 300);
 		
-		setTitle("Sistema");
+		setTitle(nombreEmpresa);
 		
 		menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -32,13 +35,20 @@ public class VentanaPrincipal extends JFrame {
 		mnArchivo = new JMenu("Archivo");
 		menuBar.add(mnArchivo);
 		
+		editarTabla = new JMenuItem("Editar Tabla");
+		editarTabla.addActionListener( new AccionPrincipal(this));
+		mnArchivo.add(editarTabla);
+		
 		mntmEmpleado = new JMenuItem("Empleado");
+		mntmEmpleado.addActionListener( new AccionPrincipal(this));
 		mnArchivo.add(mntmEmpleado);
 		
 		mntmCliente = new JMenuItem("Cliente");
+		mntmCliente.addActionListener( new AccionPrincipal(this));
 		mnArchivo.add(mntmCliente);
 		
 		mntmSalir = new JMenuItem("Salir");
+		mntmSalir.addActionListener(new AccionPrincipal(this));
 		mnArchivo.add(mntmSalir);
 		
 		
@@ -90,5 +100,13 @@ public class VentanaPrincipal extends JFrame {
 
 	public void setMntmSalir(JMenuItem mntmSalir) {
 		this.mntmSalir = mntmSalir;
+	}
+
+	public JMenuItem getEditarTabla() {
+		return editarTabla;
+	}
+
+	public void setEditarTabla(JMenuItem editarTabla) {
+		this.editarTabla = editarTabla;
 	}
 }

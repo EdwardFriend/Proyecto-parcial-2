@@ -1,4 +1,5 @@
 package ventanas;
+import escuchadores.*;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 
@@ -48,15 +49,19 @@ public class EditarTabla extends JDialog{
 	getContentPane().add(buttonPane, BorderLayout.SOUTH);
 	
 	btnAgregar = new JButton("Agregar");
+	btnAgregar.addActionListener(new AccionEditar(this));
 	buttonPane.add(btnAgregar);
 	
 	btnModificar = new JButton("Modificar");
+	btnModificar.addActionListener(new AccionEditar(this));
 	buttonPane.add(btnModificar);
 	
 	btnEliminar = new JButton("Eliminar");
+	btnEliminar.addActionListener(new AccionEditar(this));
 	buttonPane.add(btnEliminar);
 	
 	btnSalir = new JButton("Salir");
+	btnSalir.addActionListener(new AccionEditar(this));
 	buttonPane.add(btnSalir);
 	
 	
