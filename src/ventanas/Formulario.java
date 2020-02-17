@@ -6,6 +6,7 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.border.EmptyBorder;
 
 import escuchadores.AccionEditar;
@@ -25,8 +26,9 @@ public class Formulario extends JDialog {
 	private JTextField txtCedula;
 	private JLabel lblEdad;
 	private JTextField txtEdad;
-	private JLabel lblDireccion;
-	private JTextField txtDireccion;
+	private JLabel lblSexo;
+	private JRadioButton rbHombre;
+	private JRadioButton rbMujer;
 	private JLabel cargo;
 	private JCheckBox check1;
 	private JButton btnGuardar;
@@ -44,13 +46,16 @@ public class Formulario extends JDialog {
 	JPanel panel = new JPanel();
 	contentPanel.add(panel);
 	setTitle("Formulario");
+	
+	//Nombre
 	JLabel lblNombre = new JLabel("Nombre:");
 	panel.add(lblNombre);
-	
 	txtNombre = new JTextField();
 	panel.add(txtNombre);
 	txtNombre.setColumns(10);
+	txtNombre.addActionListener(new AccionFormulario(this));
 	
+	//Apellido
 	panel_1 = new JPanel();
 	contentPanel.add(panel_1);
 	lblApellido = new JLabel("Apellido:");
@@ -58,15 +63,9 @@ public class Formulario extends JDialog {
 	txtApellido = new JTextField();
 	panel_1.add(txtApellido);
 	txtApellido.setColumns(10);
+	txtApellido.addActionListener(new AccionFormulario(this));
 	
-	JPanel panel_2 = new JPanel();
-	contentPanel.add(panel_2);
-	lblCedula = new JLabel("Cedula:");
-	panel_2.add(lblCedula);
-	txtCedula = new JTextField();
-	panel_2.add(txtCedula);
-	txtCedula.setColumns(10);
-	
+	//Edad
 	JPanel panel_3 = new JPanel();
 	contentPanel.add(panel_3);
 	lblEdad = new JLabel("Edad:");
@@ -74,20 +73,27 @@ public class Formulario extends JDialog {
 	txtEdad = new JTextField();
 	panel_3.add(txtEdad);
 	txtEdad.setColumns(10);
+	txtEdad.addActionListener(new AccionFormulario(this));
 	
+	//Sexo
 	JPanel panel_4 = new JPanel();
 	contentPanel.add(panel_4);
-	lblDireccion = new JLabel("Direccion:");
-	panel_4.add(lblDireccion);
-	txtDireccion = new JTextField();
-	panel_4.add(txtDireccion);
-	txtDireccion.setColumns(10);
-	
+	lblSexo = new JLabel("Sexo");
+	rbHombre = new JRadioButton("Hombre");
+	rbHombre.addActionListener(new AccionFormulario(this));
+	rbMujer = new JRadioButton("Mujer");
+	rbMujer.addActionListener(new AccionFormulario(this));
+	panel_4.add(lblSexo);
+	panel_4.add(rbHombre);
+	panel_4.add(rbMujer);
+ 
+	//Supervisor
 	JPanel panel_5 = new JPanel();
 	contentPanel.add(panel_5);
 	cargo =new JLabel("Supervisor:");
 	panel_5.add(cargo);
 	check1 = new JCheckBox ();
+	check1.addActionListener(new AccionFormulario(this));
 	panel_5.add(check1);
 	
 	
@@ -136,22 +142,6 @@ public class Formulario extends JDialog {
 		this.txtApellido = txtApellido;
 	}
 
-	public JLabel getLblCedula() {
-		return lblCedula;
-	}
-
-	public void setLblCedula(JLabel lblCedula) {
-		this.lblCedula = lblCedula;
-	}
-
-	public JTextField getTxtCedula() {
-		return txtCedula;
-	}
-
-	public void setTxtCedula(JTextField txtCedula) {
-		this.txtCedula = txtCedula;
-	}
-
 	public JLabel getLblEdad() {
 		return lblEdad;
 	}
@@ -166,22 +156,6 @@ public class Formulario extends JDialog {
 
 	public void setTxtEdad(JTextField txtEdad) {
 		this.txtEdad = txtEdad;
-	}
-
-	public JLabel getLblDireccion() {
-		return lblDireccion;
-	}
-
-	public void setLblDireccion(JLabel lblDireccion) {
-		this.lblDireccion = lblDireccion;
-	}
-
-	public JTextField getTxtDireccion() {
-		return txtDireccion;
-	}
-
-	public void setTxtDireccion(JTextField txtDireccion) {
-		this.txtDireccion = txtDireccion;
 	}
 
 	public JLabel getCargo() {
@@ -218,6 +192,30 @@ public class Formulario extends JDialog {
 
 	public JPanel getContentPanel() {
 		return contentPanel;
+	}
+
+	public JLabel getLblSexo() {
+		return lblSexo;
+	}
+
+	public void setLblSexo(JLabel lblSexo) {
+		this.lblSexo = lblSexo;
+	}
+
+	public JRadioButton getRbHombre() {
+		return rbHombre;
+	}
+
+	public void setRbHombre(JRadioButton rbHombre) {
+		this.rbHombre = rbHombre;
+	}
+
+	public JRadioButton getRbMujer() {
+		return rbMujer;
+	}
+
+	public void setRbMujer(JRadioButton rbMujer) {
+		this.rbMujer = rbMujer;
 	}
 	
 }

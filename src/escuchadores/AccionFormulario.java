@@ -1,4 +1,5 @@
 package escuchadores;
+import clases.*;
 import ventanas.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -14,19 +15,22 @@ public class AccionFormulario implements ActionListener{
 		if(e.getSource()==win3.getBtnGuardar()) {
 			String nombre = win3.getTxtNombre().getText();
 			String apellido = win3.getTxtApellido().getText();
-			String cedula = win3.getTxtCedula().getText();
+			String sexo;
+			if(win3.getRbHombre().isSelected()==true) {
+				sexo="Hombre";
+			}
+			if(win3.getRbMujer().isSelected()==true) {
+				sexo="Mujer";
+			}
 			String edad = win3.getTxtEdad().getText();
-			String direccion = win3.getTxtDireccion().getText();
 			boolean supervisor = win3.getCheck1().isSelected();
-			
+			if(supervisor==true) {
+				
+			}
 			win3.getTxtNombre().setText(" ");
 			win3.getTxtNombre().requestFocus();
 			win3.getTxtApellido().setText(" ");
 			win3.getTxtApellido().requestFocus();
-			win3.getTxtCedula().setText(" ");
-			win3.getTxtCedula().requestFocus();
-			win3.getTxtDireccion().setText(" ");
-			win3.getTxtDireccion().requestFocus();
 			win3.getCheck1().setSelected(false);
 			win3.getCheck1().requestFocus();
 		}
